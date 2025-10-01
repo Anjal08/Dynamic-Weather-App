@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeatherNow • Real-Time Forecast</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Weather<span>Now</span></h1>
+      <form class="search" id="search-form" autocomplete="off">
+        <input
+          id="city-input"
+          class="input"
+          type="text"
+          placeholder="Search city (e.g., Lucknow, Delhi)…"
+          aria-label="City name"
+          required
+        />
+        <button id="search-btn" class="btn" type="submit" aria-label="Search">Search</button>
+        <button id="geo-btn" class="btn btn-ghost" type="button" aria-label="Use current location">
+          Use My Location
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section class="panel panel-current" aria-labelledby="current-heading">
+      <div class="panel-head">
+        <div class="place-time">
+          <h2 id="current-heading" class="city" data-city>City Name</h2>
+          <p class="datetime" data-datetime>Mon, 26 Aug • 08:00</p>
+        </div>
+        <div class="temp-wrap">
+          <div class="temp" data-temp>--°</div>
+          <div class="condition" data-condition>Loading…</div>
+        </div>
+      </div>
+
+      <div class="current-grid">
+        <div class="metric">
+          <span class="metric-label">Humidity</span>
+          <span class="metric-value" data-humidity>--%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Wind</span>
+          <span class="metric-value" data-wind>-- km/h</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Pressure</span>
+          <span class="metric-value" data-pressure>-- hPa</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Visibility</span>
+          <span class="metric-value" data-visibility>-- km</span>
+        </div>
+
+        <div class="sun card">
+          <div class="sun-row">
+            <span>Sunrise</span>
+            <strong data-sunrise>--:--</strong>
+          </div>
+          <div class="sun-row">
+            <span>Sunset</span>
+            <strong data-sunset>--:--</strong>
+          </div>
+        </div>
+
+        <div class="aqi card" aria-labelledby="aqi-heading">
+          <div class="card-head">
+            <h3 id="aqi-heading">Air Quality Index</h3>
+            <span class="aqi-badge" data-aqi-badge>--</span>
+          </div>
+          <div class="aqi-grid">
+            <div class="aqi-item"><span>PM₂.₅</span><strong data-pm25>--</strong></div>
+            <div class="aqi-item"><span>PM₁₀</span><strong data-pm10>--</strong></div>
+            <div class="aqi-item"><span>CO</span><strong data-co>--</strong></div>
+            <div class="aqi-item"><span>SO₂</span><strong data-so2>--</strong></div>
+            <div class="aqi-item"><span>NO₂</span><strong data-no2>--</strong></div>
+            <div class="aqi-item"><span>O₃</span><strong data-o3>--</strong></div>
+          </div>
+          <p class="aqi-note" data-aqi-note>—</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="forecast-heading">
+      <div class="panel-head">
+        <h2 id="forecast-heading">5-Day Forecast</h2>
+      </div>
+      <div class="forecast-grid" id="forecast-list" aria-live="polite"></div>
+    </section>
+    <body>
+  <div class="weather-container">
+    <!-- Tumhara pura weather app ka content yaha -->
+  </div>
+</body>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-inner">
+      <p>WeatherNow</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
